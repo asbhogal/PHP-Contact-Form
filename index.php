@@ -21,12 +21,16 @@
 			<form>
 				<div class="form-floating mb-3">
   				<input type="email" class="form-control" id="email-address" placeholder="name@example.com">
-  				<label for="floatingInput">Email address</label>
+  				<label for="email">Email address</label>
 					<div id="emailHelp" class="form-text">We'll never share your email with anyone else.</div>
 				</div>
 				<div class="form-floating mb-3">
-  				<input type="text" class="form-control" placeholder="Subject" aria-label="input" aria-describedby="input">
+  				<input type="text" id="subject" class="form-control" placeholder="Subject" aria-label="input" aria-describedby="input">
 					<label for="floatingInput">Subject</label>
+				</div>
+				<div class="form-floating">
+				  <textarea class="form-control" placeholder="Leave a comment here" id="message" style="height: 100px"></textarea>
+				  <label for="floatingTextarea2">Please enter your comment</label>
 				</div>
 			  <div class="mb-3 form-check">
 			    <input type="checkbox" class="form-check-input" id="exampleCheck1">
