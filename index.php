@@ -19,18 +19,18 @@
 			<h1>Get in touch!</h1>
 
 			<form>
-			  <div class="mb-3">
-			    <label for="exampleInputEmail1" class="form-label">Email address</label>
-			    <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
-			    <div id="emailHelp" class="form-text">We'll never share your email with anyone else.</div>
-			  </div>
-			  <div class="mb-3">
-			    <label for="exampleInputPassword1" class="form-label">Password</label>
-			    <input type="password" class="form-control" id="exampleInputPassword1">
-			  </div>
+				<div class="form-floating mb-3">
+  				<input type="email" class="form-control" id="email-address" placeholder="name@example.com">
+  				<label for="floatingInput">Email address</label>
+					<div id="emailHelp" class="form-text">We'll never share your email with anyone else.</div>
+				</div>
+				<div class="form-floating mb-3">
+  				<input type="text" class="form-control" placeholder="Subject" aria-label="input" aria-describedby="input">
+					<label for="floatingInput">Subject</label>
+				</div>
 			  <div class="mb-3 form-check">
 			    <input type="checkbox" class="form-check-input" id="exampleCheck1">
-			    <label class="form-check-label" for="exampleCheck1">Check me out</label>
+			    <label class="form-check-label" for="exampleCheck1">I consent for my data to be handled in accordance with GDPR guidelines</label>
 			  </div>
 			  <button type="submit" class="btn btn-primary">Submit</button>
 		</form>
