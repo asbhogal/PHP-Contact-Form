@@ -1,6 +1,6 @@
 <html>
   <head>
-    <title>PHP Test</title>
+    <title>Contact Formt</title>
     <link rel="stylesheet" href="style.css">
   </head>
   <body>
