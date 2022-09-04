@@ -1,3 +1,22 @@
+<?php
+	if ($_POST) {	// SERVER-SIDE VALIDATION IS RECOMMENDED, AS JS VALIDATION CAN BE TURNED OFF IN A CLIENT'S BROWSER. THIS CHECKS TO SEE FIRSTLY IF THERE ARE ANY 'POST' VARIABLES
+		
+		$error = "";
+							 
+		if (!$_POST["email-address"]) {													// ie. IF THE EMAIL ADDRESS IS EMPTY (CHECKS TO SEE IF THERE'S NO EMAIL POST VARIABLE PRESENT, OR THAT THE POST VARIABLE IS EMPTY)
+			$error .= "An email address is required.<br>"					// APPEND THE FOLLOWING MESSAGE
+		}
+																														// REPEAT FOR THE OTHER THREE FIELDS
+		if (!$_POST["subject"]) {
+			$error .= "Please enter in a subject.<br>"
+		}
+
+		if (!$_POST["message"]) {
+			$error .= "Please enter in your message.<br>"
+		}
+	}
+?>
+
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -19,19 +38,19 @@
   <body>
 		<div class="container">
 			<h1>Get in touch!</h1>
-
+			<form method="post">
 			<form>
 				<div class="form-floating mb-3">
-  				<input type="email" class="form-control" id="email-address" placeholder="name@example.com">
+  				<input type="email" class="form-control" id="email-address" name="email-address" placeholder="name@example.com">
   				<label for="email">Email address</label>
 					<div id="emailHelp" class="form-text">We'll never share your email with anyone else.</div>
 				</div>
 				<div class="form-floating mb-3">
-  				<input type="text" id="subject" class="form-control" placeholder="Subject" aria-label="input" aria-describedby="input">
+  				<input type="text" id="subject" class="form-control" placeholder="Subject" name="subject" aria-label="input" aria-describedby="input">
 					<label for="subject">Subject</label>
 				</div>
 				<div class="form-floating">
-				  <textarea class="form-control" placeholder="Leave a comment here" id="message" style="height: 100px"></textarea>
+				  <textarea class="form-control" placeholder="Leave a comment here" id="message" name="message" style="height: 100px"></textarea>
 				  <label for="content">Please enter your comment</label>
 				</div>
 				<div class="pt-3">
