@@ -10,7 +10,7 @@
 		<!-- STYLESHEET -->
     <link rel="stylesheet" href="style.css">
 		<!-- JQUERY SCRIPT -->
-		<script src="jquery-3.6.1.min.js" defer></script>
+		<script src="src/jquery-3.6.1.min.js" defer></script>
 		<!-- JavaScript Bundle with Popper -->
 		<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-A3rJD856KowSb7dwlZdYEkO39Gagi7vIsF0jrRAoQmDKKtQBHUuLZ9AsSv4jD4Xa" crossorigin="anonymous" defer></script>
   	<!-- MAIN SCRIPT -->
@@ -34,12 +34,11 @@
 				  <textarea class="form-control" placeholder="Leave a comment here" id="message" style="height: 100px"></textarea>
 				  <label for="content">Please enter your comment</label>
 				</div>
-			  <button type="submit" class="btn btn-primary">Submit</button>
+				<div class="pt-3">
+			  	<button type="submit" class="btn btn-primary pt-auto">Submit</button>
+				</div>
 		</form>
-		</div>
-    <?php 
-			echo '<p>Test Content</p>'; 
-		?> 
+			<div id="error-message"></div>
     <script src="https://replit.com/public/js/replit-badge.js" theme="blue" defer></script> 
   </body>
 </html>
