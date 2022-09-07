@@ -14,6 +14,10 @@
 		if (!$_POST["message"]) {
 			$error .= "Please enter in your message.<br>"
 		}
+
+		if (filter_var($_POST["email-address"], FILTER_VALIDATE_EMAIL) === false) {
+			$error .= "Invalid email address"
+		}
 	}
 ?>
 
