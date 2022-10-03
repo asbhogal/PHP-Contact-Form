@@ -44,20 +44,20 @@
 			<h1>Get in touch!</h1>
 			<form method="post">
 			<form>
-				<div class="form-floating mb-3">
+				<div class="form-field">
   				<input type="email" class="form-control" id="email-address" name="email-address" placeholder="name@example.com">
   				<label for="email">Email address</label>
 					<div id="emailHelp" class="form-text">We'll never share your email with anyone else.</div>
 				</div>
-				<div class="form-floating mb-3">
+				<div class="form-field">
   				<input type="text" id="subject" class="form-control" placeholder="Subject" name="subject" aria-label="input" aria-describedby="input">
 					<label for="subject">Subject</label>
 				</div>
-				<div class="form-floating">
+				<div class="form-field">
 				  <textarea class="form-control" placeholder="Leave a comment here" id="message" name="message" style="height: 100px"></textarea>
 				  <label for="content">Please enter your comment</label>
 				</div>
-				<div class="pt-3">
+				<div class="form-field">
 			  	<button type="submit" class="btn btn-primary pt-auto">Submit</button>
 				</div>
 		</form>
