@@ -1,8 +1,8 @@
 <?php
+	$error = "";																								// DEFINES AND DECLARES THE VARIABLE IRRESPECTIVE OF A 'POST' SUBMISSION
+
 	if ($_POST) {	                                             	// SERVER-SIDE VALIDATION IS RECOMMENDED, AS JS VALIDATION CAN BE TURNED OFF IN A CLIENT'S BROWSER. THIS CHECKS TO SEE FIRSTLY IF THERE ARE ANY 'POST' VARIABLES
-		
-		$error = "";
-							 
+									 
 		if (!$_POST["email-address"]) {						                // ie. IF THE EMAIL ADDRESS IS EMPTY (CHECKS TO SEE IF THERE'S NO EMAIL POST VARIABLE PRESENT, OR THAT THE POST VARIABLE IS EMPTY)
 			$error .= "An email address is required.<br>";					// APPENDING TO ERROR VARIABLE (STRING) THE FOLLOWING MESSAGE
 		}
@@ -20,7 +20,7 @@
 		}
 
 		if ($error != "") {
-			$error = '<div class="alert alert-danger" role="alert"><p><strong>There were error(s) in your form submission:</strong></p></div>' . $error . '</div>';
+			$error = '<div class="alert alert-danger" role="alert"><p><strong>There were error(s) in your form submission:</strong></p>' . $error . '</div>';
 		}
 	}
 ?>
@@ -41,7 +41,7 @@
 		<!-- JavaScript Bundle with Popper -->
 		<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-A3rJD856KowSb7dwlZdYEkO39Gagi7vIsF0jrRAoQmDKKtQBHUuLZ9AsSv4jD4Xa" crossorigin="anonymous" defer></script>
   	<!-- MAIN SCRIPT -->
-		<script src="script.js" defer></script>
+		<!--<script src="script.js" defer></script>-->
 	</head>
   <body>
 		<div class="container">
@@ -65,7 +65,7 @@
 			  	<button type="submit" class="btn btn-primary pt-auto">Submit</button>
 				</div>
 		</form>
-			<div id="error-message"></div>
+			<div id="error-message"><? echo $error; ?></div>
     <script src="https://replit.com/public/js/replit-badge.js" theme="blue" defer></script> 
   </body>
 </html>	
