@@ -1,22 +1,26 @@
 <?php
-	if ($_POST) {	                                                        // SERVER-SIDE VALIDATION IS RECOMMENDED, AS JS VALIDATION CAN BE TURNED OFF IN A CLIENT'S BROWSER. THIS CHECKS TO SEE FIRSTLY IF THERE ARE ANY 'POST' VARIABLES
+	if ($_POST) {	                                             	// SERVER-SIDE VALIDATION IS RECOMMENDED, AS JS VALIDATION CAN BE TURNED OFF IN A CLIENT'S BROWSER. THIS CHECKS TO SEE FIRSTLY IF THERE ARE ANY 'POST' VARIABLES
 		
 		$error = "";
 							 
 		if (!$_POST["email-address"]) {						                // ie. IF THE EMAIL ADDRESS IS EMPTY (CHECKS TO SEE IF THERE'S NO EMAIL POST VARIABLE PRESENT, OR THAT THE POST VARIABLE IS EMPTY)
-			$error .= "An email address is required.<br>";					// APPEND THE FOLLOWING MESSAGE
+			$error .= "An email address is required.<br>";					// APPENDING TO ERROR VARIABLE (STRING) THE FOLLOWING MESSAGE
 		}
-																			// REPEAT FOR THE OTHER THREE FIELDS
+																															// REPEAT FOR THE OTHER THREE FIELDS
 		if (!$_POST["subject"]) {
-			$error .= "Please enter in a subject.<br>";
+			$error .= "Please enter in a subject.<br>";							// APPENDING TO ERROR VARIABLE (STRING) THE FOLLOWING MESSAGE
 		}
 
 		if (!$_POST["message"]) {
-			$error .= "Please enter in your message.<br>";
+			$error .= "Please enter in your message.<br>";					// APPENDING TO ERROR VARIABLE (STRING) THE FOLLOWING MESSAGE
 		}
 
 		if (filter_var($_POST["email-address"], FILTER_VALIDATE_EMAIL) === false) {
-			$error .= "Invalid email address";
+			$error .= "Invalid email address";											// APPENDING TO ERROR VARIABLE (STRING) THE FOLLOWING MESSAGE
+		}
+
+		if ($error != "") {
+			$error = '<div class="alert alert-danger" role="alert"><p><strong>There were error(s) in your form submission:</strong></p></div>' . $error . '</div>';
 		}
 	}
 ?>
@@ -64,4 +68,4 @@
 			<div id="error-message"></div>
     <script src="https://replit.com/public/js/replit-badge.js" theme="blue" defer></script> 
   </body>
-</html>
+</html>	
