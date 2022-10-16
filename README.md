@@ -1,6 +1,6 @@
 <div align="center">
 	
-	<h1>Contact Form</h1>
+<h1>Contact Form</h1>
 
 </div>
 
