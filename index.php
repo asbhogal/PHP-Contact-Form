@@ -1,26 +1,52 @@
 <?php
 	$error = "";																								// DEFINES AND DECLARES THE VARIABLE IRRESPECTIVE OF A 'POST' SUBMISSION
+	$successMessage = "";																				// DEFINES AND DECLARES THE VARIABLE BEFORE IT CAN BE PARSED A VALUE TO UPON SUCESSFUL 'POST'
 
 	if ($_POST) {	                                             	// SERVER-SIDE VALIDATION IS RECOMMENDED, AS JS VALIDATION CAN BE TURNED OFF IN A CLIENT'S BROWSER. THIS CHECKS TO SEE FIRSTLY IF THERE ARE ANY 'POST' VARIABLES
 									 
 		if (!$_POST["email-address"]) {						                // ie. IF THE EMAIL ADDRESS IS EMPTY (CHECKS TO SEE IF THERE'S NO EMAIL POST VARIABLE PRESENT, OR THAT THE POST VARIABLE IS EMPTY)
+			
 			$error .= "An email address is required.<br>";					// APPENDING TO ERROR VARIABLE (STRING) THE FOLLOWING MESSAGE
 		}
 																															// REPEAT FOR THE OTHER THREE FIELDS
 		if (!$_POST["subject"]) {
+			
 			$error .= "Please enter in a subject.<br>";							// APPENDING TO ERROR VARIABLE (STRING) THE FOLLOWING MESSAGE
 		}
 
 		if (!$_POST["message"]) {
+			
 			$error .= "Please enter in your message.<br>";					// APPENDING TO ERROR VARIABLE (STRING) THE FOLLOWING MESSAGE
 		}
 
 		if ($_POST["email-address"] && filter_var($_POST["email-address"], FILTER_VALIDATE_EMAIL) === false) {
+			
 			$error .= "Invalid email address.<br>";									// APPENDING TO ERROR VARIABLE (STRING) THE FOLLOWING MESSAGE
 		}
 
 		if ($error != "") {
+			
 			$error = '<div class="alert alert-danger" role="alert"><p><strong>There were error(s) in your form submission:</strong></p>' . $error . '</div>';
+		
+		} else {
+			
+			$emailTo = "example@example.com";
+			
+			$subject = $_POST["subject"];
+			
+			$message = $_POST["message"];
+			
+			$headers = "New message from: ".$_POST["email-address"];
+
+			if (mail($emailTo, $subject, $message, $headers)) {
+				
+				$successMessage = '<div class="alert alert-success" role="alert"><p><strong>Thank you for your message! We\'ll get back to you shortly</strong></p>';
+			
+			} else {
+				
+				$error = '<div class="alert alert-danger" role="alert"><p><strong>Uh oh! Looks like we couldn\'t send your message. Please try again later, or get in touch with us at:' . ' '. $emailTo . '</strong></p>';
+			
+			}
 		}
 	}
 ?>
@@ -62,7 +88,9 @@
 			  	<button type="submit" class="btn btn-primary pt-auto">Submit</button>
 				</div>
 		</form>
-			<div id="error-message" class="pt-2"><? echo $error; ?></div>
+			<div id="error-message" class="pt-2"><?php 
+																							echo $error.$successMessage; 
+																						?></div>								<!--THERE WILL EITHER BE A SUCCESS OR NOT, SO BOTH VARIABLES CAN BE PLACED HERE-->
     <script src="https://replit.com/public/js/replit-badge.js" theme="blue" defer></script> 
   </body>
 </html>	
