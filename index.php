@@ -15,8 +15,8 @@
 			$error .= "Please enter in your message.<br>";					// APPENDING TO ERROR VARIABLE (STRING) THE FOLLOWING MESSAGE
 		}
 
-		if (filter_var($_POST["email-address"], FILTER_VALIDATE_EMAIL) === false) {
-			$error .= "Invalid email address";											// APPENDING TO ERROR VARIABLE (STRING) THE FOLLOWING MESSAGE
+		if ($_POST["email-address"] && filter_var($_POST["email-address"], FILTER_VALIDATE_EMAIL) === false) {
+			$error .= "Invalid email address.<br>";									// APPENDING TO ERROR VARIABLE (STRING) THE FOLLOWING MESSAGE
 		}
 
 		if ($error != "") {
