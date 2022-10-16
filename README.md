@@ -1,14 +1,18 @@
-<h1>Contact Form</h1>
+<div align="center">
+	
+	<h1>Contact Form</h1>
 
-A contact form coded using HTML5, CSS3, jQuery, Bootstrap and PHP as a project for the Udemy course The Complete Web Developer Course 2.0 This project is currently under development.
+</div>
 
-<strong>Features:</strong><br>
-  - Modern stylish interface
+A contact form coded using HTML5, CSS3, jQuery, Bootstrap and PHP as a project for the Udemy course The Complete Web Developer Course 2.0 which leverages both client-side (JavaScript and jQuery) form validation and server-side (PHP validation). This repo is currently under development.
+
+<strong>:heavy_check_mark: Features</strong><br>
+  - Modern, stylish interface
   - Form validation
   - Full responsiveness
   - Optimised for the web
 
-<strong>Stacks Used:</strong><br>
+<strong>:nerd_face: Stacks Used</strong><br>
 <br>
 <a target="_blank" rel="noopener noreferrer" href="https://github.com/devicons/devicon/blob/master/icons/html5/html5-original.svg"><img src="https://github.com/devicons/devicon/raw/master/icons/html5/html5-original.svg" alt="html5" width="50" height="50" style="max-width:100%;"></a>
 <a target="_blank" rel="noopener noreferrer" href="https://github.com/devicons/devicon/blob/master/icons/css3/css3-original.svg"><img src="https://github.com/devicons/devicon/raw/master/icons/css3/css3-original.svg" alt="css3" width="50" height="50" style="max-width:100%;"></a>
